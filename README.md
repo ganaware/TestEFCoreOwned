@@ -1,6 +1,8 @@
 Only the 1st Owned Entity property can be configured by Fluent API
 
-# Problem
+### Steps to reproduce
+
+A complete code is here: https://github.com/ganaware/TestEFCoreOwned
 
 I defined an entity Book that has three Owned Entity properties: EnglishInfo, JapaneseInfo and ChineseInfo.
 The type of these properties is Info configured by fluend API.
@@ -65,8 +67,6 @@ The type of these properties is Info configured by fluend API.
     }
 ```
 
-(complete project is here: https://github.com/ganaware/TestEFCoreOwned)
-
 Then, I created a migration by dotnet command:
 
 ```sh
@@ -117,8 +117,9 @@ The problem is:
 
 In short, Only the 1st Owned Entity property (EnglishInfo) can be configured by Fluent API.  Configurations for 2nd (JapaneseInfo) and 3rd (ChineseInfo) are ignored.
 
-# Versions
+### Further technical details
 
-- EF Core: 2.1.4, 2.2.0
-- Database Provider: Microsoft.EntityFrameworkCore.Sqlite 2.2.0, Pomelo.EntityFrameworkCore.MySql 2.1.4
-- other: Windows 7, Visual Studio 2017 Version 15.8.7
+EF Core version: 2.1.4, 2.2.0
+Database Provider: Microsoft.EntityFrameworkCore.Sqlite 2.2.0, Pomelo.EntityFrameworkCore.MySql 2.1.4
+Operationg system: Windows 7
+IDE: Visual Studio 2017 15.8.7
