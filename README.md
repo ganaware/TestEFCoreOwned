@@ -2,7 +2,7 @@ Only the 1st Owned Entity property can be configured by Fluent API
 
 ### Steps to reproduce
 
-A complete code is here: https://github.com/ganaware/TestEFCoreOwned
+A complete project is here: https://github.com/ganaware/TestEFCoreOwned
 
 I defined an entity Book that has three Owned Entity properties: EnglishInfo, JapaneseInfo and ChineseInfo.
 The type of these properties is Info configured by fluend API.
@@ -119,7 +119,7 @@ In short, Only the 1st Owned Entity property (EnglishInfo) can be configured by 
 
 ### Further technical details
 
-EF Core version: 2.1.4, 2.2.0
-Database Provider: Microsoft.EntityFrameworkCore.Sqlite 2.2.0, Pomelo.EntityFrameworkCore.MySql 2.1.4
-Operationg system: Windows 7
-IDE: Visual Studio 2017 15.8.7
+- EF Core version: 2.1.4, 2.2.0
+- Database Provider: Microsoft.EntityFrameworkCore.Sqlite 2.2.0,  Pomelo.EntityFrameworkCore.MySql 2.1.4
+- Operationg system: Windows 7
+- IDE: Visual Studio 2017 15.8.7
