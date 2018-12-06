@@ -5,7 +5,7 @@ Only the 1st Owned Entity property can be configured by Fluent API
 I defined an entity Book that has three Owned Entity properties: EnglishInfo, JapaneseInfo and ChineseInfo.
 The type of these properties is Info configured by fluend API.
 
-```cplusplus
+```csharp
     public class Book {
         public int BookId { get; set; }
         public Info EnglishInfo { get; set; }
@@ -75,7 +75,7 @@ dotnet ef migrations add InitialCreate
 
 The generated 20181206004616_InitialCreate.cs is:
 
-```cplusplus
+```csharp
     public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
