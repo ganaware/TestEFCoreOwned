@@ -1,3 +1,48 @@
+Problem Solved!
+
+### Problem Solved!
+
+It's my bug!
+The solution is described here: https://github.com/aspnet/EntityFrameworkCore/issues/9144#issuecomment-314537752
+
+I fixed as follows:
+
+```csharp
+    public class Book {
+        ...
+        public static void OnModelCreating(ModelBuilder modelBuilder) {
+            var e_tb = modelBuilder.Entity<Book>();
+            e_tb.Property(e => e.BookId);
+            e_tb.OwnsOne(e => e.EnglishInfo, cb => Info.OnModelCreating(cb));
+            e_tb.OwnsOne(e => e.JapaneseInfo, cb => Info.OnModelCreating(cb));
+            e_tb.OwnsOne(e => e.ChineseInfo, cb => Info.OnModelCreating(cb));
+        }
+    }
+
+    public class Info {
+        ...
+        public static void OnModelCreating<T>(ReferenceOwnershipBuilder<T, Info> rob) where T : class {
+            rob.Property(e => e.Title);
+            rob.Property(e => e.Author)
+                .HasMaxLength(100);
+            rob.Property(e => e.Memo);
+        }
+    }
+
+    public class MyContext : DbContext {
+        ...
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+            base.OnModelCreating(modelBuilder);
+            //Info.OnModelCreating(modelBuilder);
+            Book.OnModelCreating(modelBuilder);
+        }
+    }
+```
+
+All works as expected.
+
+# Below is the original README
+
 Only the 1st Owned Entity property can be configured by Fluent API
 
 ### Steps to reproduce

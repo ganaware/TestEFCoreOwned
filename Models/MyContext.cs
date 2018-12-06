@@ -21,7 +21,7 @@ namespace TestEFCoreOwned.Models {
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             base.OnModelCreating(modelBuilder);
-            Info.OnModelCreating(modelBuilder);
+            //Info.OnModelCreating(modelBuilder);
             Book.OnModelCreating(modelBuilder);
         }
     }

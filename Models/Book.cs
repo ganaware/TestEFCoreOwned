@@ -10,9 +10,9 @@ namespace TestEFCoreOwned.Models {
         public static void OnModelCreating(ModelBuilder modelBuilder) {
             var e_tb = modelBuilder.Entity<Book>();
             e_tb.Property(e => e.BookId);
-            e_tb.OwnsOne(e => e.EnglishInfo);
-            e_tb.OwnsOne(e => e.JapaneseInfo);
-            e_tb.OwnsOne(e => e.ChineseInfo);
+            e_tb.OwnsOne(e => e.EnglishInfo, cb => Info.OnModelCreating(cb));
+            e_tb.OwnsOne(e => e.JapaneseInfo, cb => Info.OnModelCreating(cb));
+            e_tb.OwnsOne(e => e.ChineseInfo, cb => Info.OnModelCreating(cb));
         }
     }
 }

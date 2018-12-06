@@ -31,7 +31,10 @@ namespace TestEFCoreOwned.Migrations
                         {
                             b1.Property<int>("BookId");
 
-                            b1.Property<string>("Author");
+                            b1.Property<string>("Author")
+                                .HasMaxLength(100);
+
+                            b1.Property<string>("Memo");
 
                             b1.Property<string>("Title");
 
@@ -70,7 +73,10 @@ namespace TestEFCoreOwned.Migrations
                         {
                             b1.Property<int>("BookId");
 
-                            b1.Property<string>("Author");
+                            b1.Property<string>("Author")
+                                .HasMaxLength(100);
+
+                            b1.Property<string>("Memo");
 
                             b1.Property<string>("Title");
 

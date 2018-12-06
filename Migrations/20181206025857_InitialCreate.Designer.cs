@@ -8,7 +8,7 @@ using TestEFCoreOwned.Models;
 namespace TestEFCoreOwned.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20181206004616_InitialCreate")]
+    [Migration("20181206025857_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,7 +33,10 @@ namespace TestEFCoreOwned.Migrations
                         {
                             b1.Property<int>("BookId");
 
-                            b1.Property<string>("Author");
+                            b1.Property<string>("Author")
+                                .HasMaxLength(100);
+
+                            b1.Property<string>("Memo");
 
                             b1.Property<string>("Title");
 
@@ -72,7 +75,10 @@ namespace TestEFCoreOwned.Migrations
                         {
                             b1.Property<int>("BookId");
 
-                            b1.Property<string>("Author");
+                            b1.Property<string>("Author")
+                                .HasMaxLength(100);
+
+                            b1.Property<string>("Memo");
 
                             b1.Property<string>("Title");
 

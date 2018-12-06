@@ -16,9 +16,11 @@ namespace TestEFCoreOwned.Migrations
                     EnglishInfo_Author = table.Column<string>(maxLength: 100, nullable: true),
                     EnglishInfo_Memo = table.Column<string>(nullable: true),
                     JapaneseInfo_Title = table.Column<string>(nullable: true),
-                    JapaneseInfo_Author = table.Column<string>(nullable: true),
+                    JapaneseInfo_Author = table.Column<string>(maxLength: 100, nullable: true),
+                    JapaneseInfo_Memo = table.Column<string>(nullable: true),
                     ChineseInfo_Title = table.Column<string>(nullable: true),
-                    ChineseInfo_Author = table.Column<string>(nullable: true)
+                    ChineseInfo_Author = table.Column<string>(maxLength: 100, nullable: true),
+                    ChineseInfo_Memo = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
