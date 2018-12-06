@@ -1,3 +1,9 @@
+Problem Solved!
+
+See: https://github.com/ganaware/TestEFCoreOwned/tree/ProblemSolved
+
+# Below is the original README
+
 Only the 1st Owned Entity property can be configured by Fluent API
 
 ### Steps to reproduce
